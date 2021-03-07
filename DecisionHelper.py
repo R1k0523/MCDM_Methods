@@ -1,5 +1,5 @@
 
-from methods import *
+import methods
 
 
 class DecisionHelper:
@@ -21,7 +21,7 @@ class DecisionHelper:
         TOPSIS метод для сравнения альтернатив по весам
         :return: список ценности альтернатив
         """
-        return topsis(self.dataset, self.weights, self.signs)
+        return methods.topsis(self.dataset, self.weights, self.signs)
 
     def electre(self):
         """
@@ -29,12 +29,12 @@ class DecisionHelper:
         :return: матрица согласия, матрица несогласия,
         матрица удовлетворения пороговым значения индексов согласия и несогласия
         """
-        return electre(self.dataset, self.weights)
+        return methods.electre(self.dataset, self.weights)
 
     def saw(self):
         """
         SAW метод для сравнения альтернатив по весам
         :return: список ценности альтернатив
         """
-        return saw_method(self.dataset, self.weights)
+        return methods.saw_method(self.dataset, self.weights)
 
